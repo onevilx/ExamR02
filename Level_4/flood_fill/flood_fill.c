@@ -85,11 +85,7 @@ F0FF000F
 FFF0000F
 $>
 */
-  typedef struct  s_point
-  {
-    int           x;
-    int           y;
-  }               t_point;
+#include "flood_fill.h"
 
 void	fill(char **tab, t_point size, t_point cur, char to_fill)
 {

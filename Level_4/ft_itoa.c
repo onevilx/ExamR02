@@ -37,7 +37,7 @@ int	ft_abs(int nbr)
 }
 char	*ft_itoa(int nbr)
 {
-	char **cnum;
+	char *cnum;
 	int len;
 	int i;
 
