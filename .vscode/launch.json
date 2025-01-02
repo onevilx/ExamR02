@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "lldb",
+      "request": "launch",
+      "args": [],
+      "cwd": "/mnt/homes/yaboukir/Desktop/mygithub/ExamR02/Level_1",
+      "program": "/mnt/homes/yaboukir/Desktop/mygithub/ExamR02/Level_1/build/Debug/outDebug"
+    }
+  ]
+}
