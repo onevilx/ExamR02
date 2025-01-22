@@ -14,10 +14,9 @@ char	*ft_itoa(int nbr);
 
 #include <stdlib.h>
 
-int	nlen(int nbr)
+int		nlen(int nbr)
 {
 	int	i;
-
 	if (nbr == 0)
 		return (1);
 	i = 0;
@@ -31,25 +30,25 @@ int	nlen(int nbr)
 
 char	*ft_itoa(int nbr)
 {
-	char *cnum;
-	int len;
-	int i;
+	char	*cnum;
+	int		len;
+	int		is_neg;
 
-	len = nlen(nbr);
-	i = 0;
-	if (nbr < 0)
-		i++;
-	len = len + i;
+	is_neg = (nbr < 0);
+	len = nlen(nbr) + is_neg;
+
 	cnum = (char *)malloc((len + 1) * sizeof(char));
 	if (!cnum)
-		return (NULL);
-	cnum[0] = '-';
+		return(NULL);
 	cnum[len] = '\0';
-	while ((len - 1) >= i)
+	if (nbr == 0)
+		cnum[0] = '0';
+	if (is_neg)
+		cnum[0] = '-';
+	while (nbr != 0)
 	{
-		cnum [len -1] = abs(nbr % 10) + '0';
+		cnum[--len] = (is_neg ? -(nbr % 10) : (nbr % 10)) + 48;
 		nbr /= 10;
-		len--;
 	}
 	return (cnum);
 }
