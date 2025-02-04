@@ -15,15 +15,11 @@ int	ft_atoi(const char *str);
 */
 #include <stdio.h>
 
-int	ft_atoi(const char *str)
+int		ft_atoi(const char *str)
 {
-	int result;
-	int sign;
+	int sign = 1;
+	int res = 0;
 
-	result = 0;
-	sign = 1;
-	while (*str == 32 || (*str >= 9 && *str <= 13))
-		str++;
 	if (*str == '-' || *str == '+')
 	{
 		if (*str == '-')
@@ -31,14 +27,11 @@ int	ft_atoi(const char *str)
 		str++;
 	}
 	while (*str >= '0' && *str <= '9')
-	{
-		result = result * 10 + (*str - 48);
-		str++;
-	}
-	return (sign * result);
+		res = res * 10 + (*str++ - 48);
+	return(res * sign);
 }
 int main()
 {
-	char s1[] = "  	  	 -12345ab321";
+	char s1[] = "-12345ab321";
 	printf("%d\n", ft_atoi(s1));
 }

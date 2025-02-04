@@ -34,48 +34,38 @@ $>
 void	write_word(char *start, char *end)
 {
 	while (start < end)
-	{
-		write(1, start, 1);
-		start++;
-	}
+		write(1, start++, 1);
 }
 int main (int argc, char **argv)
 {
 	char	*str;
-	char	*firstws;
-	char	*firstwe;
+	char	*firstwstart;
+	char	*firstwend;
 
 	if (argc > 1)
 	{
 		str = argv[1];
-		while (*str == ' ' || *str == '\t')
-			str++;
-		firstws = str;
-		while (*str && *str != ' ' && *str != '\t')
-			str++;
-		firstwe = str;
-		while (*str == ' ' || *str == '\t')
-			str++;
+		while (*str == ' ' || *str == '\t') str++;
+		firstwstart = str;
+		while (*str && *str != ' ' && *str != '\t') str++;
+		firstwend = str;
+		while (*str == ' ' || *str == '\t') str++;
 		if (*str)
 		{
 			while (*str)
 			{
 				if (*str == ' ' || *str == '\t')
 				{
-					while (*str == ' ' || *str == '\t')
-						str++;
+					while (*str == ' ' || *str == '\t') str++;
 					if (*str)
 						write(1, " ", 1);
 				}
 				else
-				{
-					write(1, str, 1);
-					str++;
-				}
+					write(1, str++, 1);
 			}
 			write(1, " ", 1);
 		}
-		write_word(firstws, firstwe);
+		write_word(firstwstart, firstwend);
 	}
 	write(1, "\n", 1);
 	return (0);
