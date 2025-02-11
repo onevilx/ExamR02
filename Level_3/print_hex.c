@@ -22,29 +22,31 @@ $
 */
 #include <unistd.h>
 
-int ft_atoi(char *str)
+int	ft_atoi(char *str)
 {
-	int	n = 0;
+	int res = 0, sign = 1;
 
-	while (*str != '\0')
+	if (*str == '-')
 	{
-		n = n * 10;
-		n = n + *str - '0';
-		++str;
+		sign = -1;
+		str++;
 	}
-	return (n);
+	while (*str >= '0' && *str <= '9')
+		res = res * 10 + (*str++ - 48);
+	return(res *sign);
 }
-void	print_hex(int n)
-{
-	char hex_digits[] = "0123456789abcdef";
 
-	if (n >= 16)
-		print_hex(n / 16);
-	write(1, &hex_digits[n % 16], 1);
+void	ft_putnbr(int nb)
+{
+	if (nb > 16)
+		ft_putnbr(nb / 16);
+	write(1, &"0123456789abcdef"[nb % 16], 1);
 }
+
 int main(int argc, char **argv)
 {
 	if (argc == 2)
-		print_hex(ft_atoi(argv[1]));
+		ft_putnbr(ft_atoi(argv[1]));
 	write(1, "\n", 1);
+	return(0);
 }
