@@ -16,47 +16,29 @@ char    **ft_split(char *str);
 */
 
 #include <stdlib.h>
-char	*ft_strncpy(char *s1, char *s2, int n)
+char    **ft_split(char *str)
 {
-	int i = -1;
-
-	while (++i < n && s2[i])
-		s1[i] = s2[i];
-	s1[i] = '\0';
-	return (s1);
-}
-char	**ft_split(char *str)
-{
-	int	i = 0;
-	int	j = 0;
-	int	k = 0;
-	int	wc = 0;
+	int i = 0, i2 = 0, i3;
+	char **tab = malloc(sizeof(**tab) * 100);
 
 	while (str[i])
 	{
-		while (str[i] && (str[i] == ' ' || str[i] == '\t' || str[i] == '\n'))
-			i++;
-		if (str[i])
-			wc++;
-		while (str[i] && (str[i] != ' ' && str[i] != '\t' && str[i] != '\n'))
-			i++;
-	}
-
-	char **out = (char **)malloc(sizeof(char *) * (wc + 1));
-	i = 0;
-	while (str[i])
-	{
-		while (str[i] && (str[i] == ' ' || str[i] == '\t' || str[i] == '\n'))
-			i++;
-		j = i;
-		while (str[i] && (str[i] != ' ' || str[i] != '\t' || str[i] != '\n'))
-			i++;
-		if (i > j)
+		if (str[i] > 32)
 		{
-			out[k] = (char *)malloc(sizeof(char) * ((i - j) + 1));
-			ft_strncpy(out[k++], &str[j], i - j);
+			i3 = 0;
+			tab[i2] = malloc(100);
+			while(str[i] > 32)
+			{
+				tab[i2][i3] = str[i];
+				i++;
+				i3++;
+			}
+			tab[i2][i3] = '\0';
+			i2++;
 		}
+		else
+			i++;
 	}
-	out[k] = NULL;
-	return (out);
+	tab[i2] = 0;
+	return (tab);
 }
