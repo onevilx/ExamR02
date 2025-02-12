@@ -13,18 +13,16 @@ char    *ft_strdup(char *src);
 #include <stdlib.h>
 #include <stdio.h>
 
-char	*ft_strdup(char *src)
+char    *ft_strdup(char *src)
 {
-	int	i = 0;
-	int	len = 0;
+	int i = 0, len = 0;
 	char	*cpy;
-
-	while (src[len])
+	while(src[len])
 		len++;
-	cpy = malloc(sizeof(*cpy) * (len + 1));
+	cpy = malloc(len + 1);
 	if (cpy != NULL)
 	{
-		while (src[i])
+		while(src[i])
 		{
 			cpy[i] = src[i];
 			i++;
