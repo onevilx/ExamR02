@@ -13,7 +13,6 @@ Your function must be declared as follows:
 
 int	ft_atoi(const char *str);
 */
-#include <stdio.h>
 
 int		ft_atoi(const char *str)
 {
@@ -29,9 +28,4 @@ int		ft_atoi(const char *str)
 	while (*str >= '0' && *str <= '9')
 		res = res * 10 + (*str++ - 48);
 	return(res * sign);
-}
-int main()
-{
-	char s1[] = "-12345ab321";
-	printf("%d\n", ft_atoi(s1));
 }

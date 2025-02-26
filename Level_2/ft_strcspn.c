@@ -11,7 +11,8 @@ The function should be prototyped as follows:
 
 size_t	ft_strcspn(const char *s, const char *reject);
 */
-#include <stdio.h>
+
+#include <stdlib.h>
 
 size_t	ft_strcspn(const char *s, const char *reject)
 {
@@ -32,14 +33,4 @@ size_t	ft_strcspn(const char *s, const char *reject)
 	}
 	return (count);
 }
-int main(void)
-{
-	const char str[] = "Hello, World!";
-	const char reject[] = "a";
-	size_t result;
 
-	result = ft_strcspn(str, reject);
-	printf("i found it, it matches at : %zuth\n", result);
-
-	return 0;
-}

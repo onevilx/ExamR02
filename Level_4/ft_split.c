@@ -16,17 +16,18 @@ char    **ft_split(char *str);
 */
 
 #include <stdlib.h>
+
 char    **ft_split(char *str)
 {
 	int i = 0, i2 = 0, i3;
-	char **tab = malloc(sizeof(**tab) * 100);
+	char **tab = malloc(sizeof(**tab) * 1000);
 
 	while (str[i])
 	{
 		if (str[i] > 32)
 		{
 			i3 = 0;
-			tab[i2] = malloc(100);
+			tab[i2] = malloc(1000);
 			while(str[i] > 32)
 			{
 				tab[i2][i3] = str[i];

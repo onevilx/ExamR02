@@ -10,7 +10,6 @@ Your function must be declared as follows:
 
 char    *ft_strcpy(char *s1, char *s2);
 */
-#include <stdio.h>
 
 char	*ft_strcpy(char *s1, char *s2)
 {
@@ -24,12 +23,4 @@ char	*ft_strcpy(char *s1, char *s2)
 	}
 	s1[i] = '\0';
 	return (s1);
-}
-int	main(void)
-{
-	char str1[] = "hi, this is a test";
-	char str2[] = "";
-
-	printf("%s\n", ft_strcpy(str2, str1));
-	return 0;
 }

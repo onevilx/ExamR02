@@ -26,8 +26,3 @@ void	ft_putstr(char *str)
 		i++;
 	}
 }
-int main()
-{
-	char *d = "hello this is a test";
-	ft_putstr(d);
-}

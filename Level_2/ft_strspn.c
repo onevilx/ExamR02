@@ -11,7 +11,8 @@ The function should be prototyped as follows:
 
 size_t	ft_strspn(const char *s, const char *accept);
 */
-#include <stdio.h>
+
+#include <stdlib.h>
 
 size_t	ft_strspn(const char *s, const char *accept)
 {
@@ -31,17 +32,4 @@ size_t	ft_strspn(const char *s, const char *accept)
 		s++;
 	}
 	return (count);
-}
-int main()
-{
-	char str[] = "heeelllooisthisatesst";
-	char srch[] = "hel12";
-	size_t res;
-
-	res = ft_strspn(str, srch);
-	if (res > 0)
-		printf("the matched character is : %zu\n", res);
-	else
-		printf("there is no match characters in the string.\n");
-	return (0);
 }

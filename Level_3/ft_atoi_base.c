@@ -20,7 +20,6 @@ Your function must be declared as follows:
 
 int	ft_atoi_base(const char *str, int str_base);
 */
-#include <stdio.h>
 
 int    ft_atoi_base(const char *str, int str_base)
 {
@@ -28,14 +27,12 @@ int    ft_atoi_base(const char *str, int str_base)
 
     if (!str || (str_base < 2 || str_base > 16 ))
         return 0;
-		
 	if (str[i] == '-' || str[i] == '+')
 	{
 		if (str[i] == '-')
 			sign = -1;
 		i++;
 	}
-    
 	while (str[i])
     {
         if (str[i] >= '0' && str[i] <= '9')
@@ -52,26 +49,4 @@ int    ft_atoi_base(const char *str, int str_base)
         i++;
     }
     return (res * sign);
-}
-
-int main() 
-{
-    char *num1 = "1010";  // Binary representation of 10
-    char *num2 = "FF";    // Hexadecimal representation of 255
-    char *num3 = "123";   // Decimal representation of 123
-    char *num4 = "Z";     // Base 36 example (should return 35)
-    
-    // Test with base 2 (binary)
-    printf("Base 2 (binary): %s -> %d\n", num1, ft_atoi_base(num1, 2));
-
-    // Test with base 16 (hexadecimal)
-    printf("Base 16 (hex): %s -> %d\n", num2, ft_atoi_base(num2, 16));
-
-    // Test with base 10 (decimal)
-    printf("Base 10 (decimal): %s -> %d\n", num3, ft_atoi_base(num3, 10));
-
-    // Test with base 36 (alphanumeric base)
-    printf("Base 36: %s -> %d\n", num4, ft_atoi_base(num4, 36));
-
-    return 0;
 }

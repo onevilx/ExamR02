@@ -10,7 +10,6 @@ Your function must be declared as follows:
 
 int	ft_strlen(char *str);
 */
-#include <stdio.h>
 
 int ft_strlen(char *str)
 {
@@ -20,9 +19,4 @@ int ft_strlen(char *str)
 	while(str[count])
 		count++;
 	return (count);
-}
-int main()
-{
-	char str[] = "how about now ??";
-	printf("%d\n", ft_strlen(str));
 }

@@ -20,7 +20,6 @@ _____________
      \/
  1000  0010
 */
-#include <stdio.h>
 
 unsigned char reverse_bits(unsigned char octet)
 {
@@ -34,17 +33,4 @@ unsigned char reverse_bits(unsigned char octet)
 		i--;
 	}
 	return (res);
-}
-
-unsigned char	reverse_bits(unsigned char octet);
-
-int	main(void)
-{
-	unsigned char octet = 65; // Binary: 0100 0001
-	unsigned char reversed;
-
-	reversed = reverse_bits(octet);
-	printf("Original: %u (binary: 0100 0001)\n", octet);
-	printf("Reversed: %u (binary: 1000 0010)\n", reversed);
-	return (0);
 }

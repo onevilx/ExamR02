@@ -28,7 +28,6 @@ Your function must be prototyped as follows:
 
   unsigned int    lcm(unsigned int a, unsigned int b);
 */
-#include <stdio.h>
 
 unsigned int	lcm(unsigned int a, unsigned int b)
 {
@@ -46,25 +45,4 @@ unsigned int	lcm(unsigned int a, unsigned int b)
 			return (n);
 		++n;
 	}
-}
-int main()
-{
-    unsigned int a = 12;
-    unsigned int b = 18;
-
-    printf("LCM of %u and %u is: %u\n", a, b, lcm(a, b));
-
-    a = 0;
-    b = 25;
-    printf("LCM of %u and %u is: %u\n", a, b, lcm(a, b));
-
-    a = 7;
-    b = 5;
-    printf("LCM of %u and %u is: %u\n", a, b, lcm(a, b));
-
-    a = 6;
-    b = 6;
-    printf("LCM of %u and %u is: %u\n", a, b, lcm(a, b));
-
-    return 0;
 }

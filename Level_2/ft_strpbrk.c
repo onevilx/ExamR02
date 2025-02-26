@@ -11,7 +11,8 @@ The function should be prototyped as follows:
 
 char	*ft_strpbrk(const char *s1, const char *s2);
 */
-#include <stdio.h>
+
+#include <stdlib.h>
 
 char	*ft_strpbrk(const char *s1, const char *s2)
 {
@@ -31,19 +32,4 @@ char	*ft_strpbrk(const char *s1, const char *s2)
 		i++;
 	}
 	return (NULL);
-}
-
-int main()
-{
-	char str1[] = "glamour, bloonde";
-	char str2[] = "z";
-	char	*res;
-
-	res = ft_strpbrk(str1, str2);
-
-	if (res != NULL)
-	printf("the matched charcater is : %c\n", *res);
-	else
-		printf("doesnt match any in the string");
-	return 0;
 }

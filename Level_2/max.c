@@ -15,7 +15,6 @@ The function returns the largest number found in the array.
 
 If the array is empty, the function returns 0.
 */
-#include <stdio.h>
 
 int	max(int *tab, unsigned int len)
 {
@@ -32,17 +31,4 @@ int	max(int *tab, unsigned int len)
 		i++;
 	}
 	return result;
-}
-int main()
-{
-	int	tab[] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
-	unsigned int len = 5;
-	int	res;
-
-	res = max(tab, len);
-	if (len == 0)
-		printf("the string is empty");
-	else
-		printf("%d\n", res);
-	return (0);
 }

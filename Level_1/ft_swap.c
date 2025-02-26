@@ -11,7 +11,6 @@ Your function must be declared as follows:
 
 void	ft_swap(int *a, int *b);
 */
-#include <stdio.h>
 
 void	ft_swap(int *a, int *b)
 {
@@ -20,12 +19,4 @@ void	ft_swap(int *a, int *b)
 	c = *a;
 	*a = *b;
 	*b = c;
-}
-int main()
-{
-	int ya = 1;
-	int oa = 69;
-	printf("old age is : %d, and young age is : %d\n", oa, ya);
-	ft_swap(&ya, &oa);
-	printf("old age is : %d, and young age is : %d\n", oa, ya);
 }

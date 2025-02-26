@@ -13,7 +13,6 @@ Your function must be declared as follows:
 char    *ft_strrev(char *str);
 
 */
-#include <stdio.h>
 
 char	*ft_strrev(char *str)
 {
@@ -34,9 +33,4 @@ char	*ft_strrev(char *str)
 		len--;
 	}
 	return (str);
-}
-int main()
-{
-	char str[] = "i mean what you mean";
-	printf("%s\n", ft_strrev(str));
 }
